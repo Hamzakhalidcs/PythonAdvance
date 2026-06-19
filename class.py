@@ -51,7 +51,25 @@ class BankAccount:
     def show_balance(self):
         print(f"Current balance is {self.balance}")
 
-account1 =BankAccount("Hamza", 10000)
-account1.deposit(50000)
-account1.withdraw(20000)
-account1.show_balance()
+    def transfer(self, amount, receiver_account):
+        if amount <= 0:
+            print("Invalid transfer amount")
+        
+        elif amount > self.balance:
+            print("Insufficient funds for transfer")
+
+        else:
+            self.balance -= amount
+            receiver_account.balance += amount
+            print(f"{amount} transferred from {self.name} to {receiver_account.name}.")
+
+
+# account1 =BankAccount("Hamza", 10000)
+# account1.deposit(50000)
+# account1.withdraw(20000)
+# account1.show_balance()
+
+acc1 = BankAccount("Hamza", 5000)
+acc2 = BankAccount("Ali", 3000)
+acc1.transfer(1000, acc2)
+
