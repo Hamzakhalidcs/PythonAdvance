@@ -1,11 +1,9 @@
 # Class is basically a blueprint 
-from pyclbr import Class
 
-
-class Car:
+class Car_type:
     pass
 
-car1 = Car()
+car1 = Car_type()
 print(car1)
 
 # Constructor runs automatically when object is created
@@ -48,8 +46,8 @@ class BankAccount:
             self.balance = self.balance - amount
             print(f"{amount} withdrawn. Balance : {self.balance}")
 
-    def show_balance(self):
-        print(f"Current balance is {self.balance}")
+    # def show_balance(self):
+    #     print(f"Current balance is {self.balance}")
 
     def transfer(self, amount, receiver_account):
         if amount <= 0:
@@ -64,6 +62,10 @@ class BankAccount:
             print(f"{amount} transferred from {self.name} to {receiver_account.name}.")
 
 
+    def show_balance(self):
+        print(f"{self.name} : {self.balance}")
+
+
 # account1 =BankAccount("Hamza", 10000)
 # account1.deposit(50000)
 # account1.withdraw(20000)
@@ -73,3 +75,8 @@ acc1 = BankAccount("Hamza", 5000)
 acc2 = BankAccount("Ali", 3000)
 acc1.transfer(1000, acc2)
 
+print(acc1.balance)  # Output: 4000
+print(acc2.balance)  # Output: 4000
+
+acc1.show_balance()
+acc2.show_balance()
