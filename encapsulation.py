@@ -40,9 +40,31 @@ class Employee:
     def __init__(self, salary):
         self.__salary = salary
 
+    #  Getter means Read private data safely
     def get_salary(self):
         return self.__salary
 
+    # Setter means change private data safely.
+    def set_salary(self, salary):
+        self.__salary = salary
 
+    def set_new_salary(self, new_salary):
+        if new_salary < 0:
+            print("Salary cannot be negative")
+
+        elif new_salary > 0:
+            self.set_salary  = new_salary
+
+        else:
+            print("Invalid salary, please enter a valid salary")
+
+   
 obj1 = Employee(50000)
-print(obj1.get_salary()) # this will work because we are accessing the private variable through a public method.
+print(obj1.get_salary()) 
+# this will work because we are accessing the private variable through a public method.
+
+
+
+
+ 
+
