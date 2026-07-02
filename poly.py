@@ -27,7 +27,7 @@ cat = Cat()
 cat.speak()
 
 # Notice that the methos is same but behaviour is change depends on the object call.this is polym,orphism
-make_sound(dog)]
+make_sound(dog)
 
 # The variable animal references a Dog object. When animal.speak() is executed,
 # Python looks for the speak() method in the Dog class and calls it, which prints "Woof".
