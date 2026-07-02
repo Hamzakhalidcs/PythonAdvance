@@ -1,0 +1,6 @@
+            Easy way to remember
+            
+Encapsulation	            Abstraction
+Hides data	                Hides implementation
+Protects variables          Simplifies usage
+Uses private variables	    Uses abstract classes/interfaces
