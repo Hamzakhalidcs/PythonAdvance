@@ -30,7 +30,7 @@ print(emp2.salary)
 
 # Atm Servie project 
 class BankAccount:
-
+    
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
