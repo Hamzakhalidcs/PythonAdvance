@@ -41,6 +41,23 @@ class Library():
         for book in self.books:
             book.display_info()
 
+
+    def search_book(self, title):
+        found = False
+
+        search_title = title.lower()
+        for book in self.books:
+            if book.title.lower() == search_title:
+                book.display_info()
+                found = True
+            
+        if not found:
+                print(f"No Book with title {title}")
+        
+        
+        
+
+
 python_book = Book(101, "Python", "Eric", 5)
 sql_book = Book(102, "SQL", "John", 4)
 data_book = Book(103, "Data Engineering", "JS Thomson", 3)
@@ -51,8 +68,8 @@ library.add_book(python_book)
 library.add_book(sql_book)
 library.add_book(data_book)
 
-library.display_books()
-
+# library.display_books()
+library.search_book('ISLAMIAT')
 
 
 
