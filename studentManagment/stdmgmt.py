@@ -53,11 +53,20 @@ class Library(Book):
         
         for book in self.books:
             if book.title.lower() == search_title:
-                book.display_info()
+                book.display_info() #i.e is the change 
                 return book  # ← Returns the book object
             
         return None  # ← Returns None if not found
 
+    def check_quantity(self, title):
+        book = self.search_book(title)
+        if book:
+            print(f"Book {title} has {book.quantity} Copies Left")
+            return book.quantity
+        
+        else:
+            print(f"Book {title} not Found")
+            return None
     
     def borrow_book(self, title):
         """Borrow a book if exist and is available"""
@@ -95,7 +104,10 @@ library.add_book(data_book)
 # print(another_book is python_book)
 
 library.borrow_book("Python")
-library.search_book('Python')
+# library.search_book('Python')
+
+print("*"*30)
+library.check_quantity('Python')
 
 
 
