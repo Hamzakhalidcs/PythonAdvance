@@ -18,12 +18,10 @@ class Book:
 
 
     def borrow_book(self):
-        print("Book", self.title)
         self.quantity -= 1
 
 
     def return_book(self):
-        print("Book ", self.title)
         self.quantity += 1
 
 
@@ -55,7 +53,7 @@ class Library(Book):
             if book.title.lower() == search_title:
                 print(f"{title} Book is Available in Library")
                 return book
-                # book.display_info() #i.e is the change 
+                # book.display_info() #in case you need to display the book info when found 
                 # return book  # ← Returns the book object
             
         return None  # ← Returns None if not found
@@ -86,6 +84,17 @@ class Library(Book):
         book.borrow_book()
         print(f"Successfully Borrowed '{book.title}' Book.")
         
+    def return_book(self, title):
+        """Return a book if exist in the library"""
+
+        book = self.search_book(title)
+
+        if not book:
+            print(f"Book {title} not found in Library")
+            return False
+        
+        book.return_book()
+        print(f"Successfully Returned '{book.title}' Book.") 
 
 
 
@@ -106,12 +115,17 @@ library.add_book(data_book)
 
 
 library.search_book('Python')
-# library.borrow_book("Python")
+print("*"*30)
+library.borrow_book("Python")
 
 print("*"*30)
-# library.check_quantity('Python')
+library.check_quantity('Python')
 
+print("*"*30)
 
+library.return_book("Python")
+print("*"*30)
+library.check_quantity('Python')
 
  
   
