@@ -25,11 +25,10 @@ class Book:
         self.quantity += 1
 
 
-class Library(Book):
+class Library():
     def __init__(self):
         self.books = []
-        for book in self.books:
-            book.dislay_info()
+
         
     def add_book(self, book):
          self.books.append(book)
@@ -44,6 +43,17 @@ class Library(Book):
             print("No Books in the Library")
 
    
+    def find_book(self, title):
+        """Return the book object if found, else None."""
+
+        search_title = title.lower()
+        
+        for book in self.books:
+            if book.title.lower() == search_title:
+                book.display_info() #in case you need to display the book info when found .
+            
+        return None  # ← Returns None if not found
+
     def search_book(self, title):
         """Return the book object if found, else None."""
 
@@ -51,7 +61,6 @@ class Library(Book):
         
         for book in self.books:
             if book.title.lower() == search_title:
-                print(f"{title} Book is Available in Library")
                 return book
                 # book.display_info() #in case you need to display the book info when found 
                 # return book  # ← Returns the book object
@@ -114,8 +123,6 @@ library.add_book(data_book)
 # print(another_book is python_book)
 
 
-library.search_book('Python')
-print("*"*30)
 library.borrow_book("Python")
 
 print("*"*30)
@@ -126,6 +133,8 @@ print("*"*30)
 library.return_book("Python")
 print("*"*30)
 library.check_quantity('Python')
+
+library.find_book("python")
 
  
   
