@@ -41,19 +41,7 @@ class Library():
 
         if not self.books:
             print("No Books in the Library")
-
-   
-    def find_book(self, title):
-        """Return the book object if found, else None."""
-
-        search_title = title.lower()
-        
-        for book in self.books:
-            if book.title.lower() == search_title:
-                book.display_info() #in case you need to display the book info when found .
-            
-        return None  # ← Returns None if not found
-
+    
     def search_book(self, title):
         """Return the book object if found, else None."""
 
@@ -66,6 +54,20 @@ class Library():
                 # return book  # ← Returns the book object
             
         return None  # ← Returns None if not found
+    
+    def find_book(self, title):
+        """Return the book object if found, else None."""
+        
+        book = self.search_book(title)
+        if book:
+            print(f"Book {title} Found in Library")
+            book.display_info()
+            return book
+        
+        else:
+            print(f"Book {title} not Found in Library")
+            return None
+
 
     def check_quantity(self, title): 
         book = self.search_book(title)
@@ -134,6 +136,7 @@ library.return_book("Python")
 print("*"*30)
 library.check_quantity('Python')
 
+print("*"*30)
 library.find_book("python")
 
  
