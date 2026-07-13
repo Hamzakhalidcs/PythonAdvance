@@ -1,3 +1,11 @@
+class BookUnavailableError(Exception):
+    """Raised when trying to borrow a book that has no copies available."""
+    pass
+
+class BookNotFoundError(Exception):
+    """Raised when trying to borrow a book that doesn't exist in the library."""
+    pass
+
 class Book:
     
     
@@ -24,6 +32,7 @@ class Book:
     def return_book(self):
         self.quantity += 1
 
+ 
 
 class Library():
     def __init__(self):
@@ -85,8 +94,9 @@ class Library():
         book = self.search_book(title)
 
         if not book:
-            print(f"Book {title} not found in Library")
-            return False
+            # print(f"Book {title} not found in Library")
+            raise BookNotFoundError(f"Book {title} not found in Library")
+            # return False    
         
         if book.quantity<=0:
             print(f"'{book.title}' is Currently Unavailable (0 Coopies Left)")

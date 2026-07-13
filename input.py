@@ -18,6 +18,7 @@ while True:
     # Ask if they want to continue
     again = input("\nWould you like to make another calculation? (yes/no): ").strip().lower()
     
-    if again != "yes":
+    if again == "no":
+#   if again != "yes": 
         print("Goodbye!")
         break
