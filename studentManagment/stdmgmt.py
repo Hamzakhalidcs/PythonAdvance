@@ -26,6 +26,8 @@ class Book:
 
 
     def borrow_book(self):
+        if self.quantity == 0:
+            raise BookUnavailableError(f"'{self.title}' is Currently Unavailable (0 Copies Left)")
         self.quantity -= 1
 
 
