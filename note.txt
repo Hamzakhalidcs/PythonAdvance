@@ -4,3 +4,30 @@ Encapsulation	            Abstraction
 Hides data	                Hides implementation
 Protects variables          Simplifies usage
 Uses private variables	    Uses abstract classes/interfaces
+
+
+File Handling is simply Python talking to a file on your Computer. 
+Python can 
+1 : Read from it 
+2: Write to it 
+3: Add more data in to it 
+4: Delete or update data (Later)
+
+There are four modes to open a file 
+"r" Read a file 
+"w" Write a file 
+"a" apeend on file 
+"x" create a new file 
+
+
+A Pointer is a marker that keeps track of specific location or position. 
+
+with open in file handling has a special meaning i.e whether the program gets creashe and close
+program even with file.close() is not in snippet but still python managed to close file by the use 
+of this with open method. 
+
+The file should have to closed . is it bad ???
+yes, As an open file is a resource . 
+just like a database connection , a network connection, a camera, a microphone . 
+when you are finish using it, release it . 
+otherewise, you can waste system resources or even prevent other program from using the file. 
