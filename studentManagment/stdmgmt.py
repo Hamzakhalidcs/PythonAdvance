@@ -120,17 +120,28 @@ class Library():
         print(f"Successfully Returned '{book.title}' Book.") 
 
 
+    def save_books_to_file(self, filename):
+        """Save the current state of the library to a file."""
+        with open(filename, 'w') as f:
+            for book in self.books:
+                f.write(f"{book.book_id},{book.title},{book.author},{book.quantity}\n")
+
+
+
 
 
 python_book = Book(101, "Python", "Eric", 5)
 sql_book = Book(102, "SQL", "John", 4)
 data_book = Book(103, "Data Engineering", "JS Thomson", 3)
+English_book = Book(104, "English", "John", 2)
+
 
 library = Library()
 
 library.add_book(python_book)
 library.add_book(sql_book)
 library.add_book(data_book)
+library.add_book(English_book)
 
 # library.display_book()
 # another_book = python_book
@@ -151,6 +162,9 @@ library.check_quantity('Python')
 print("*"*30)
 library.find_book("python")
 
+print("*"*30)
+library.save_books_to_file("library_books.txt")
+print("Library Books Saved to File: library_books.txt")
  
   
     
