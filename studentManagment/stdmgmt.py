@@ -126,8 +126,20 @@ class Library():
             for book in self.books:
                 f.write(f"{book.book_id},{book.title},{book.author},{book.quantity}\n")
 
+    def Load_books_from_file(self, filename):
 
+        """Load the library state from a file """
+        try:
+            self.books.clear()  # Clear existing books before loading new ones
+            with open(filename, 'r') as f:
+                for line in f:
+                    book_id, title, author, quantity = line.strip().split(',')
+                    # Correct parameter order for Book constructor
+                    book = Book(int(book_id), title, author, int(quantity))
+                    self.add_book(book)
 
+        except FileNotFoundError:
+            print(f"File {filename} not found. Starting with an empty library.")
 
 
 python_book = Book(101, "Python", "Eric", 5)
@@ -148,23 +160,22 @@ library.add_book(English_book)
 # print(another_book is python_book)
 
 
-library.borrow_book("Python")
+# library.borrow_book("Python")
 
-print("*"*30)
-library.check_quantity('Python')
+# print("*"*30)
+# library.check_quantity('Python')
 
-print("*"*30)
+# print("*"*30)
 
-library.return_book("Python")
-print("*"*30)
-library.check_quantity('Python')
+# library.return_book("Python")
+# print("*"*30)
+# library.check_quantity('Python')
 
-print("*"*30)
-library.find_book("python")
+# print("*"*30)
+# library.find_book("python")
 
-print("*"*30)
-library.save_books_to_file("library_books.txt")
-print("Library Books Saved to File: library_books.txt")
- 
+# print("*"*30)
+library.Load_books_from_file("library_books.txt")
+library.display_book() 
   
     

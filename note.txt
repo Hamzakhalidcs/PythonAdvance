@@ -31,3 +31,27 @@ yes, As an open file is a resource .
 just like a database connection , a network connection, a camera, a microphone . 
 when you are finish using it, release it . 
 otherewise, you can waste system resources or even prevent other program from using the file. 
+
+
+Before writting code remember four thing always . 
+1 : Does algorithm make sense 
+2: Is the responsibility in the correct class 
+3: Does my code follow pep8
+4: Can i reuse this later. 
+
+whenever you finish writting a feature like savebook do three things before showing result . 
+1 : Explain the algorithm 
+2: Expalin why you design in that way. 
+3: Then show the code. 
+
+The process that should follow from  every project now on 
+1: Understand the problem (Ask your self what i am trying to build)
+2: Write the algorithm (No code just plain english)
+3: Decide responsibilities. 
+4: Write the code (As after all these steps the code become easier)
+5: Test it (Not happy path but also try to fail the code)
+6: Refactor ()
+
+
+Parsing basically is breaking down the raw text in to usable piece of data . 
+
