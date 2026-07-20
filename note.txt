@@ -55,3 +55,60 @@ The process that should follow from  every project now on
 
 Parsing basically is breaking down the raw text in to usable piece of data . 
 
+
+Who is responsible for converting a line from the file into a Book object?"
+
+The best answer would be:
+"load_books_from_file() is responsible for the conversion.
+It uses split() to separate the values and then calls the Book constructor to create the object."
+
+Logging have five levels you would use 
+1: Debuge
+2: info
+3: Warning 
+4: Error 
+5: Critical 
+
+
+Here's a rule I personally use
+
+When choosing a log level, I ask:
+
+Did everything work normally?
+✅ INFO
+
+Did something unexpected happen, but the program handled it?
+⚠️ WARNING
+
+Did an operation actually fail because of an error?
+❌ ERROR
+
+Can the application no longer continue?
+🚨 CRITICAL
+
+
+
+Here's a mental shortcut
+I use this all the time.
+
+DEBUG
+"What is my code doing?"
+
+INFO
+"Everything worked."
+
+WARNING
+"Something unexpected happened, but it's okay."
+
+ERROR
+"One operation failed."
+
+CRITICAL
+"The application cannot continue."
+
+
+Logging is the practice of recording events, message and data during a program execution. it's like
+keeping a diary of what your program does ,when it does and any problems it encounters. 
+
+A common principal is :
+Log meaningful events, not every line of code. 
