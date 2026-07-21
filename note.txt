@@ -112,3 +112,7 @@ keeping a diary of what your program does ,when it does and any problems it enco
 
 A common principal is :
 Log meaningful events, not every line of code. 
+
+Threshold rule in logging always remember : 
+            "The configured logging level is the minimum severity that will be displayed."
+

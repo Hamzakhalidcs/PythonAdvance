@@ -1,4 +1,0 @@
-101,Python,Eric,5
-102,SQL,John,4
-103,Data Engineering,JS Thomson,3
-104,English,John,2

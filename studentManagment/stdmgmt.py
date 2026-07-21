@@ -1,3 +1,8 @@
+import logging 
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
+                     filename='library.log')
+
 class BookUnavailableError(Exception):
     """Raised when trying to borrow a book that has no copies available."""
     pass
@@ -97,14 +102,17 @@ class Library():
 
         if not book:
             # print(f"Book {title} not found in Library")
-            raise BookNotFoundError(f"Book {title} not found in Library")
+            logging.warning(f"Book '{title}' not found in Library")
+            raise BookNotFoundError(f"Book '{title}' not found in Library")
             # return False    
         
         if book.quantity<=0:
+            logging.warning(f"'{book.title}' is Currently Unavailable (0 Copies Left)")
             print(f"'{book.title}' is Currently Unavailable (0 Coopies Left)")
-            return False
+            raise BookNotFoundError(f"Book '{title}' not found in Library")
         
         book.borrow_book()
+        logging.info(f"Successfully Borrowed '{book.title}' Book.")
         print(f"Successfully Borrowed '{book.title}' Book.")
         
     def return_book(self, title):
@@ -175,7 +183,6 @@ library.add_book(English_book)
 # library.find_book("python")
 
 # print("*"*30)
-library.Load_books_from_file("library_books.txt")
-library.display_book() 
-  
-    
+# library.Load_books_from_file("library_books.txt")
+# library.display_book()
+library.borrow_book("Python")
