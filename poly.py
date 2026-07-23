@@ -26,7 +26,7 @@ dog.speak()
 cat = Cat()
 cat.speak()
 
-# Notice that the methos is same but behaviour is change depends on the object call.this is polym,orphism
+# Notice that the methos is same but behaviour is change depends on the object call.this is polymorphism
 make_sound(dog)
 
 # The variable animal references a Dog object. When animal.speak() is executed,

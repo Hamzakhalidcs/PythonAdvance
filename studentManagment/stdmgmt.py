@@ -109,7 +109,7 @@ class Library():
         if book.quantity<=0:
             logging.warning(f"'{book.title}' is Currently Unavailable (0 Copies Left)")
             print(f"'{book.title}' is Currently Unavailable (0 Coopies Left)")
-            raise BookNotFoundError(f"Book '{title}' not found in Library")
+            raise BookUnavailableError(f"Book '{title}' is Currently Unavailable (0 Copies Left)")
         
         book.borrow_book()
         logging.info(f"Successfully Borrowed '{book.title}' Book.")

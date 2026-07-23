@@ -116,3 +116,31 @@ Log meaningful events, not every line of code.
 Threshold rule in logging always remember : 
             "The configured logging level is the minimum severity that will be displayed."
 
+Analogy is a comparison between two different things that are highlights their similarities,especially
+in terms of structure, function, or relationships.
+
+import os 
+without os , python knows about 
+variable, loop, classes and function. 
+
+with os, python can communicate with your computer. 
+where i am , what files in this folder, create a folder, rename this file, delet this file 
+
+
+os functionsp  purpose
+
+os.getcwd()	Get current working directory
+
+os.listdir()	Return all files and folders
+
+os.mkdir()	Create a directory
+
+os.path.exists()	Check if a file or folder exists
+
+os.path.isfile()	Check if it's a file
+
+os.path.isdir()	Check if it's a directory
+
+os.rename()	Rename a file or folder
+
+os.remove()	Delete a file
