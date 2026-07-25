@@ -144,3 +144,24 @@ os.path.isdir()	Check if it's a directory
 os.rename()	Rename a file or folder
 
 os.remove()	Delete a file
+
+
+Before Python 3.4, developers mainly used the os module.
+
+Example:
+
+import os
+
+print(os.path.exists("data.txt"))
+
+It works, but as programs grow larger, os.path.join(), string concatenation,
+and path separators (/ and \) can become cumbersome.
+
+Python introduced pathlib to make working with paths:
+
+More readable
+More object-oriented
+Easier to understand
+Cross-platform (Windows, Linux, macOS)
+
+Nowadays, for most new Python code, pathlib is the preferred approach.

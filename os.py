@@ -11,7 +11,8 @@ print("Current working directory:", os.getcwd())
 # with open("D:\\PythonAdvanced\\studentManagement\\library_books.txt")
 # here you telling the python the exact location of the file. 
 
-print(os.listdir())  # List all files and directories in the current working directory
+# List all files and directories in the current working directory
+print(os.listdir())  
 
 # print wit out list 
 for file in os.listdir():
