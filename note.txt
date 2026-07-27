@@ -165,3 +165,8 @@ Easier to understand
 Cross-platform (Windows, Linux, macOS)
 
 Nowadays, for most new Python code, pathlib is the preferred approach.
+
+Rule to remember always 
+when using relative path ,ask your self 
+"where my python script running from ? "
+start writing the path from there, not from the project root by habit. 
