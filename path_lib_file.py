@@ -66,10 +66,28 @@ print("Program Continue Running...")
 # Now move to parents=ok if directly backup/july/2026 give error of no folder exists, to overcome
 parent_path = Path("Data/Employees/july")
 
-# python thinks like data needed ? create it, Employees needed ? create it, july needed ? create it.
+# python thinks like
+#  data needed ? create it,
+#  Employees needed ? create it,
+#  july needed ? create it.
 
 parent_path.mkdir(parents=True, exist_ok=True)  # Create nested directories if they don't exist
 
+# ranaming the file using pathlib 
+path_1 = Path("abc.txt")
+new_path = Path("ABC.txt")
+
+path_1.rename(new_path)  # Rename the file
+
+new_path_move = Path("Backup/ABC.txt")
+path_1.rename(new_path_move)  # Move and rename the file to a new location
+
+# back_up_path  = Path("reports/sales.csv")
+# new_name_path = Path("Backup/salesBackup.csv")
+# back_up_path.rename(new_name_path)  # Rename and move the file to a new location
+
+
+"rename() needs a destination path so Python knows what the file or directory should be renamed to."
 
 """One sentence to remember forever
 
