@@ -82,9 +82,42 @@ path_1.rename(new_path)  # Rename the file
 new_path_move = Path("Backup/ABC.txt")
 path_1.rename(new_path_move)  # Move and rename the file to a new location
 
+
+# unlink method is used to delete a file or symbolic link. 
+# It removes the specified file from the filesystem.
+
+unlink_path_file = Path("Backup/ABC.txt")
+
+# if unlink_path_file.exists():
+#     unlink_path_file.unlink()
+
+# Can Also used this method for deleting which is professional 
+try:
+    unlink_path_file.unlink()
+
+except FileNotFoundError:
+    pass
+
+print("File Deleted")
+
 # back_up_path  = Path("reports/sales.csv")
 # new_name_path = Path("Backup/salesBackup.csv")
 # back_up_path.rename(new_name_path)  # Rename and move the file to a new location
+
+# rmdir() method is used to remove empty directories. 
+# if contains a single file, it will raise an error .
+
+folder = Path("Backup")
+folder.rmdir()
+print("Directory removed")
+
+# for removing the directory having files , 
+# use another method call rmtree removes the entire directory tree. 
+import shutil
+shutil.rmtree("folder_name")  
+
+# shutil.rmtree() remove the specified directory and all of its content,including files and subdirectoires
+
 
 
 "rename() needs a destination path so Python knows what the file or directory should be renamed to."
