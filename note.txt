@@ -170,3 +170,7 @@ Rule to remember always
 when using relative path ,ask your self 
 "where my python script running from ? "
 start writing the path from there, not from the project root by habit. 
+
+
+Apple command line tools is a package provided by Apple that contains the essential tools 
+needed for software developoment on macOS.
