@@ -59,4 +59,26 @@ print(home.is_dir())
 # difference b/w path.cwd and home is return current working directory and files realative to where your program
 # running , path.home is user home directory , user specific folder like desktop , documents,downlods
 
- 
+#  path.touch creates an empty file if it does ont exists 
+path = Path("Abc.txt")
+# path.touch()
+
+file = Path("ABC.txt")
+file.touch()
+
+print(file.exists)
+
+log_file = Path("application.log")
+if not log_file.exists():
+    log_file.touch()
+
+print("Ready to write logs")
+
+file1 = Path("practice.txt")
+print(file1.exists())
+file1.touch()
+print(file1.exists())
+
+# we can do the same job using write_text method even if the file not exists
+report_file = Path("report_file.txt")
+report_file.write_text("Hello the world of the Python")
