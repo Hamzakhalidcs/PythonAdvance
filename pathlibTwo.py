@@ -33,3 +33,30 @@ print(path_object.stem)
 print(path_object.suffix)  # .suffix will use to get the extension of file
 
 # Trying to pushing some stuff
+
+# trying suffixes methods 
+path = Path("database.backup.sql")
+print(path.suffixes)
+
+
+# getting CWD
+print(Path.cwd())
+
+current = Path.cwd()
+print(current)
+print(type(current))
+
+print(isinstance(current, Path))
+
+# Path.home returns the home directory of the current user . 
+
+home = Path.home()
+print(home)
+print(home.is_dir())
+
+# path.home() allow us to get current user's home directory without hardcoding the username,  and then we 
+# easily make the build paths relative to home direcory.
+# difference b/w path.cwd and home is return current working directory and files realative to where your program
+# running , path.home is user home directory , user specific folder like desktop , documents,downlods
+
+ 
