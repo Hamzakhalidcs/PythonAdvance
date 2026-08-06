@@ -105,3 +105,10 @@ print(content)
 
 # it does not return a path object, it returns a string,because you have read the text from file in to memory.
 # file.touch and write_text if it not exist touch is not required it will do the job .
+
+# Path.read_bytes() and path.write_bytes(), works with binary data .
+img_path  = Path("practice/images.png")
+data  = img_path.read_bytes()  
+print(type(data))     #class str byte
+
+print(data)   #print b'' means byte object 
