@@ -82,3 +82,26 @@ print(file1.exists())
 # we can do the same job using write_text method even if the file not exists
 report_file = Path("report_file.txt")
 report_file.write_text("Hello the world of the Python")
+
+# glob method searches for files and folders that match a pattern . i.e find every thing that matches the rule 
+glob_path = Path("practice")
+for file in glob_path.glob("*.txt"):
+    print(file)
+
+
+# rglob methods searches for files inside of folder as well ,like in folder there is another folder, it will search
+r_glob_path = Path("practice")
+
+for file in glob_path.rglob("*.txt"):
+    print(file) 
+
+# Path.read_text() reads the entire content of a text file and return as a string . 
+file = Path("note.txt")
+content = file.read_text()
+print(type(content))
+
+# file.write_text("Only Python")
+print(content)
+
+# it does not return a path object, it returns a string,because you have read the text from file in to memory.
+# file.touch and write_text if it not exist touch is not required it will do the job .
