@@ -174,3 +174,9 @@ start writing the path from there, not from the project root by habit.
 
 Apple command line tools is a package provided by Apple that contains the essential tools 
 needed for software developoment on macOS.
+
+ A virtual environment provides an isolated Python environment for each project.
+ This prevents dependency conflicts because each project can have its own package versions 
+ without affecting other projects or the global Python installation.
+
+ rm -rf .venv deleting the virtual environment if needed. 
