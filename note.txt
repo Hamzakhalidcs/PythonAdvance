@@ -180,3 +180,4 @@ needed for software developoment on macOS.
  without affecting other projects or the global Python installation.
 
  rm -rf .venv deleting the virtual environment if needed. 
+ source .venv/bin/activate to activate the virtual environment to the python work. 
