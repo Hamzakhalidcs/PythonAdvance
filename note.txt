@@ -181,3 +181,31 @@ needed for software developoment on macOS.
 
  rm -rf .venv deleting the virtual environment if needed. 
  source .venv/bin/activate to activate the virtual environment to the python work. 
+
+ git diff app.py shows what changes we have made. 
+ pip install -r requirements.txt to install the required packages for the project. 
+
+ python3 -m venv .venv to create virtual environment. 
+
+ To Work with project 
+ 1. Clone repository
+        ↓
+2. Enter project directory
+        ↓
+3. Create virtual environment
+        ↓
+4. Activate virtual environment
+        ↓
+5. Install requirements
+
+git clone <repository-url>
+
+cd project-name
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+git rm -r --cached .venv when .venv/ is already tracked. 
