@@ -209,3 +209,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 git rm -r --cached .venv when .venv/ is already tracked. 
+
+for installing the package of python use activate it first and then 
+python -m pip install package name 
+
+Direct vs Tranistitive dependency simply understand this line ,
+
+Direct = my code needs it.
+
+Transitive = something my code needs requires it.
