@@ -218,3 +218,44 @@ Direct vs Tranistitive dependency simply understand this line ,
 Direct = my code needs it.
 
 Transitive = something my code needs requires it.
+
+why do need logging if we alrady have print ,becuase print is mainly for some thing to print on console .
+console is basically direct conversation with computer using text . 
+Logging is for recording what is happening inside the application in a strucutured controlled way. 
+imaging your application runnign on server . somethign goes wrong at 2AM. 
+with print you may have little control over there .
+
+cat app.log will print the content inside log file . 
+
+for a snimple project or learning logging.info("Application Started") is ok that will print 
+info root : Application Started
+
+
+A logger is the object that creates and send log message from your python program.
+
+Logging tells us what happend, a logger identifies the resource that reported it .
+
+logger = logging.getLogger(__name__)
+Now imagine a bigger project
+
+Suppose you have:  Project/app.y datbase.py student.py 
+
+logger = logging.getLogger(__name__)
+
+logger.error("Database connection failed")
+Then the log can identify that the message came from the database module:
+ERROR - database - Database connection failed
+
+And student.py might produce:
+WARNING - student - Student already exists
+
+So your log becomes much more useful:
+INFO    - app      - Application Started
+ERROR   - database - Database connection failed
+WARNING - student  - Student already exists
+
+Now you can look at the log and immediately think:
+
+"The database module is where the database-related error was logged."
+
+That's the real advantage of named loggers.
