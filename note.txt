@@ -259,3 +259,13 @@ Now you can look at the log and immediately think:
 "The database module is where the database-related error was logged."
 
 That's the real advantage of named loggers.
+
+Logging threshold is the minimum logging level that the logger will process and record. 
+
+logger -> creates the log record. 
+Threshold -> decides which records are allowed through. 
+Formatter -> decide how record looks. 
+
+Now the question is, where does the log record actually go, 
+That's the job of handler, so what is handler (determines where the log should go )
+for example a handler can sends logs to a file, a terminal/console, another destination 
