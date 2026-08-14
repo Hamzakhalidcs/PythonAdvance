@@ -269,3 +269,37 @@ Formatter -> decide how record looks.
 Now the question is, where does the log record actually go, 
 That's the job of handler, so what is handler (determines where the log should go )
 for example a handler can sends logs to a file, a terminal/console, another destination 
+
+there is somthing in loggin called propagation , it is the process of by which a log mesage 
+travels upward from a specific logger to its parents loggerin hierarchy.
+
+However, when propagation happens, the child logger handle the message first ,and the root logger second.
+So why does the child ouput shows last. 
+Because the child logger's handler might be slower to flush its output than the root logger's handler.
+
+One thing important to remember in logging . 
+Configure logging centrally, let individual module create name logger and simply generate log message. 
+
+Normal logging vs Exception logging. 
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    logger.error("Something went wrong")
+
+this give us error but we don't know where and why this happend.
+so instead of logger.error  use looger.exception , you will get 
+ERROR - Something went wrong
+Traceback (most recent call last):
+  File "app.py", line 10, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+
+that will tell you what exactly happen and why this happen. 
+logger.exception is normally used inside and except block.
+so remember logger.error tells you the error and logger.exception tell you an error happened 
+and give you the traceback showing where it happened. 
+
+Now What is log Rotation. 
+if your application runs for months , it become huge , instead we can autmatically rotate it . 
+app.log, app.log.1, app.log.2 olders logs are moved aside, and the current app.log stay manageable. 
+
