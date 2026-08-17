@@ -303,3 +303,4 @@ Now What is log Rotation.
 if your application runs for months , it become huge , instead we can autmatically rotate it . 
 app.log, app.log.1, app.log.2 olders logs are moved aside, and the current app.log stay manageable. 
 
+Prventing duplicate handlers 

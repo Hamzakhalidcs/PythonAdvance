@@ -4,6 +4,10 @@ def setup_logging():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
+    if logger.handlers:
+        return 
+    
+
     handler = logging.FileHandler("app.log")
 
     formatter = logging.Formatter(
@@ -12,3 +16,4 @@ def setup_logging():
 
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+    
