@@ -1,6 +1,36 @@
-2026-08-17 22:12:14,803 - INFO - __main__ - Application Started
-2026-08-17 22:12:14,803 - INFO - __main__ - Application Finished
-2026-08-18 21:33:26,821 - INFO - __main__ - Application Started
-2026-08-18 21:33:26,822 - INFO - __main__ - Application Finished
-2026-08-19 18:09:07,196 - INFO - __main__ - Student 'Hamza' With ID '1' added Successfully 
-2026-08-19 18:09:07,197 - WARNING - __main__ - Student With ID'1' already exists! Name :Hamza
+2026-08-19 19:34:15,806 - INFO - student - Student 'Hamza' With ID '1' added Successfully 
+2026-08-19 19:34:15,806 - WARNING - student - Student With ID '1' already exists! Name :Hamza
+2026-08-19 19:34:15,806 - INFO - __main__ - Application Started
+2026-08-19 19:34:15,806 - INFO - __main__ - Application Finished
+2026-08-19 22:21:34,108 - ERROR - database - DataBase Connection Failed
+Traceback (most recent call last):
+  File "/Users/macbook_user/Python_worksapace/PythonAdvance/studentManagment/database.py", line 9, in connect_to_db
+    raise ConnectionError("Unable to connect to database")
+ConnectionError: Unable to connect to database
+2026-08-19 22:21:34,109 - INFO - __main__ - Application Started
+2026-08-19 22:21:34,109 - INFO - student - Student 'Hamza' With ID '1' added Successfully 
+2026-08-19 22:21:34,110 - WARNING - student - Student With ID '1' already exists! Name :Hamza
+2026-08-19 22:21:34,110 - ERROR - database - DataBase Connection Failed
+Traceback (most recent call last):
+  File "/Users/macbook_user/Python_worksapace/PythonAdvance/studentManagment/database.py", line 9, in connect_to_db
+    raise ConnectionError("Unable to connect to database")
+ConnectionError: Unable to connect to database
+2026-08-19 22:21:34,110 - INFO - __main__ - Application Finished
+2026-08-19 22:28:33,465 - INFO - __main__ - Application Started
+2026-08-19 22:28:33,465 - INFO - student - Student 'Hamza' With ID '1' added Successfully 
+2026-08-19 22:28:33,465 - WARNING - student - Student With ID '1' already exists! Name :Hamza
+2026-08-19 22:28:33,465 - ERROR - database - DataBase Connection Failed
+Traceback (most recent call last):
+  File "/Users/macbook_user/Python_worksapace/PythonAdvance/studentManagment/database.py", line 9, in connect_to_db
+    raise ConnectionError("Unable to connect to database")
+ConnectionError: Unable to connect to database
+2026-08-19 22:28:33,466 - INFO - __main__ - Application Finished
+2026-08-19 22:55:31,364 - INFO - __main__ - Application Started
+2026-08-19 22:55:31,364 - INFO - student - Student 'Hamza' With ID '1' added Successfully 
+2026-08-19 22:55:31,364 - WARNING - student - Student With ID '1' already exists! Name :Hamza
+2026-08-19 22:55:31,364 - ERROR - database - DataBase Connection Failed
+Traceback (most recent call last):
+  File "/Users/macbook_user/Python_worksapace/PythonAdvance/studentManagment/database.py", line 9, in connect_to_db
+    raise ConnectionError("Unable to connect to database")
+ConnectionError: Unable to connect to database
+2026-08-19 22:55:31,365 - INFO - __main__ - Application Finished
