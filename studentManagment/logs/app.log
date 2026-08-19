@@ -1,2 +1,6 @@
 2026-08-17 22:12:14,803 - INFO - __main__ - Application Started
 2026-08-17 22:12:14,803 - INFO - __main__ - Application Finished
+2026-08-18 21:33:26,821 - INFO - __main__ - Application Started
+2026-08-18 21:33:26,822 - INFO - __main__ - Application Finished
+2026-08-19 18:09:07,196 - INFO - __main__ - Student 'Hamza' With ID '1' added Successfully 
+2026-08-19 18:09:07,197 - WARNING - __main__ - Student With ID'1' already exists! Name :Hamza
