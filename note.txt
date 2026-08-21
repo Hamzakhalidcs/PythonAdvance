@@ -304,3 +304,15 @@ if your application runs for months , it become huge , instead we can autmatical
 app.log, app.log.1, app.log.2 olders logs are moved aside, and the current app.log stay manageable. 
 
 Prventing duplicate handlers 
+
+Next Topic is DSA (Data Structure and algorithm)
+Data structure is a way to store and orgranize data efficiently. 
+Algorithm is a step by step procedure to solve problem. 
+will cover this topics . 
+1 : Python list (deeper Understanding)
+2:  Strings 
+3: Dictionaries 
+4: Sets
+5: Big-O/Time Complexity 
+6: Basic Algorithm (Linear search ,binary Search, Basic Sorting, Two pointer Techniques, frequency counting)
+7: Leet Code exercises
