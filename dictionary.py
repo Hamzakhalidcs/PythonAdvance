@@ -67,5 +67,15 @@ thing to remember:
     Different keys can produce the same hash-table location ,so dictionary lookup isn't mathemathically guranteed to
     be O(1) in every possible situation .That's why we say  O(1) average case rahter than O(1) always. 
 
-The complexity depends not only on the data structure,but also on what operation you're performing on ,
+The complexity depends not only on the data structure,but also on what operation you're performing on .
+
+You now understand:
+
+List index access → O(1)
+List search → O(n)
+
+Dictionary key lookup → O(1) average
+Hash function → key → hash → location
+Hash collision → two keys can map to the same location
+Dictionary in checks keys, not values
 """
