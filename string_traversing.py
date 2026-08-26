@@ -102,3 +102,20 @@ def is_palindrome(word):
     return True
 
 print(is_palindrome('madam'))
+
+def reverse_list(word_list):
+    left = 0 
+    right = len(word_list) -1 
+    while left < right:
+        word_list[left], word_list[right] = word_list[right], word_list[left]
+        
+        left += 1
+        right -=1
+
+    return word_list
+
+test_list = ["H", "a", "m", "z", "a"]
+print("Orignal List")
+print(test_list)
+
+print(reverse_list(test_list))
