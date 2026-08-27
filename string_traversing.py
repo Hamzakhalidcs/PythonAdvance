@@ -119,3 +119,36 @@ print("Orignal List")
 print(test_list)
 
 print(reverse_list(test_list))
+
+def remove_duplicates_using_two_pointer(numbers):
+    slow = 0 
+    for fast in range(1, len(numbers)):
+        if numbers[fast] != numbers[slow]:
+            slow +=1
+            numbers[slow] = numbers[fast]
+        
+    return numbers[:slow + 1]
+    
+numbers_list = [1, 1, 2, 2, 3]
+print(remove_duplicates_using_two_pointer(numbers_list))
+
+def pair_number_sum_targer(numbers):
+    left = 0
+    right = len(numbers) -1
+
+    while left < right:
+        if numbers[left] + numbers[right] > 10:
+            right -= 1 
+
+        elif numbers[left] + numbers[right] < 10:
+            left +=1
+
+        else: 
+            return (numbers[left], numbers[right])
+        
+    return None # No pair found 
+
+numbers_list = [1, 2, 3, 5, 7, 9, 12]
+result = pair_number_sum_targer(numbers_list)
+print(result)
+    
