@@ -19,9 +19,8 @@ for i in range(len(word)):
 for i, char in enumerate(word):
     print(i, char)
 
-
 # Characet Frequency 
-frequency = {}
+frequency = {}  
 text = "banana"
 
 
