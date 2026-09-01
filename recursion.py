@@ -28,3 +28,20 @@ Coming Up  (I received answered, so now i can calculate my own answer)
 """
 
 print(countdown(3))
+
+def factorial(n):
+    if n==1:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))
+
+def recursive_sum(numbers):
+    if len(numbers)==1:
+        return numbers[0]
+    
+    return numbers[0] + recursive_sum(numbers[1:])
+
+number_list = [10,20,30,40]
+print(recursive_sum(number_list))
+    
