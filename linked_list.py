@@ -42,3 +42,35 @@ current = node1
 while current is not None:
     print(current.data)
     current=current.next
+
+class Linked_list:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_begining(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_at_the_end(self, data):
+        new_node = Node(data)
+        
+        if self.head is None:
+            self.head  = new_node
+            return
+        
+        current = self.head
+        while current.next is not None:
+            current = current.next
+
+        current.next = new_node
+
+    def display(self):
+        current =self.head()
+        while current is not None:
+            print(current.data)
+            current = current.next
+
+my_list  = Linked_list()
+my_list.insert_at_begining(10)
+print(my_list.head.data)
