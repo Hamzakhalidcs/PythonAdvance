@@ -316,3 +316,44 @@ will cover this topics .
 5: Big-O/Time Complexity 
 6: Basic Algorithm (Linear search ,binary Search, Basic Sorting, Two pointer Techniques, frequency counting)
 7: Leet Code exercises
+
+
+Month 1
+Python + DSA Foundations
+        ↓
+Month 2
+SQL + Databases
+        ↓
+Month 3
+Machine Learning
+        ↓
+Month 4
+LLMs + AI Engineering
+        ↓
+Month 5
+RAG Systems
+        ↓
+Month 6
+Agents + Deployment
+
+when we eventually build something like 
+pdf -> Rag -> Vector Search -> LLM ->DataBase -> FastAPI -> Docker
+
+Understanding what's happening underneath instead of just and copying a LangChain Tutorial. 
+
+| Structure/Technique | Key idea                                                           |
+| ------------------- | ------------------------------------------------------------------ |
+|   Stack             | LIFO → most recent item comes out first                            |
+
+| Queue               | FIFO → oldest item comes out first                                 |
+
+| Two Pointers.       | Move left/right based on whether the sum is too small or too large |
+
+| Binary Search       | Eliminate half the search space using sorted order                 |
+
+Task MAnager CLI 
+1: Add Task
+2: View Tasks
+3: Complet Task
+4: Delete Task
+5: Exit
