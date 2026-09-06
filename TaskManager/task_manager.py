@@ -37,8 +37,8 @@ while True:
         if not tasks:
             print("No Tasks yet! Add some task first")
         else:
-            for task in tasks:
-                print("Title :", task["title"])
+            for i, task in enumerate(tasks, start=1):
+                print(i, ".", task["title"])
                 print("Completed :",task["completed"])
                 print("*"*20)
                 
@@ -47,9 +47,16 @@ while True:
         print("Complete Task Selected")
         print("*"*20)
 
+        for i, task in enumerate(tasks, start=1):
+            print(i, ".", task['title'] )
+
         task_num = input("which task do you wanna mark complete : ")
-        task_num = int(task_num)
-        
+        try:
+            task_num = int(task_num)
+        except ValueError:
+            print("Enter a valid task number !")
+            continue    # stops the current iteration and go back to the begining of the while loop.    
+    
         if task_num<1 or task_num>len(tasks):
             print("Task not available for this number !")
 
@@ -65,16 +72,23 @@ while True:
         print("Delete Task Selected")
         print("*"*20)
 
-        task_num = input("Which task you wanna delete(Enter Number) : ")
-        if task_num.isdigit():
-            task_num = int(task_num)
-            if task_num<1 or task_num>len(tasks):
-                print("Task not available for this numbers !")
+        for i, task in enumerate(tasks, start=1):
+            print(i, ".", task['title'])
+        print()
 
-            else:
-                deleted_title = tasks[task_num -1]["title"]
-                tasks.pop(task_num-1)
-                print(f"✅ Task '{deleted_title}' deleted successfully!")
+        task_num = input("Which task you wanna delete(Enter Number) : ")
+        try:
+            task_num = int(task_num)
+        except ValueError:
+            print("Enter a valid task number !")
+
+        if task_num<1 or task_num>len(tasks):
+                print("Task not available for this number !")
+
+        else:
+            deleted_title = tasks[task_num -1]["title"]
+            tasks.pop(task_num-1)
+            print(f"✅ Task '{deleted_title}' deleted successfully!")
 
 
 
