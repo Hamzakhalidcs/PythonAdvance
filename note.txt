@@ -357,3 +357,7 @@ Task MAnager CLI
 3: Complet Task
 4: Delete Task
 5: Exit
+
+
+Refactoring is the process of restructuring or improving the existing code 
+without changing intended behaviour or functionality. 
