@@ -1,3 +1,5 @@
+import json
+
 def show_menu():
     print("\n==== TASK MANAGER =====")
     print("1. : Add Task")
@@ -10,6 +12,23 @@ def show_menu():
 tasks = []
 # show_menu()
 
+def save_task_to_file():
+    try:
+        with open("task.json", "w") as file:
+            json.dump(tasks, file, indent=4) #write task to a file 
+    except Exception as e:
+        print(f"Error saving Tasks: {e}")
+
+def load_tasks_from_file():
+    global tasks
+
+    try:
+        with open("task.json", "r") as file:
+            tasks = json.load(file)
+        return tasks
+    except FileNotFoundError:
+        return []
+
 def add_task():
     task_title = input("Enter Task Title : ")
         
@@ -21,19 +40,22 @@ def add_task():
 
     tasks.append(new_task)
     print("Added Successfully .")
+    save_task_to_file()
 
 def view_task():
     if not tasks:
             print("No Tasks yet! Add some task first")
     else:
         for i, task in enumerate(tasks, start=1):
-            print(i, ".", task["title"])
-            print("Completed :",task["completed"])
+            # Use ternary operator (instead of using if else condition and multiple line of code)
+            status = "Completed" if task["completed"] else "Pending"
+            print(i, ".", task["title"], status)
             print("*"*20)
 
 
 def complete_task():
     for i, task in enumerate(tasks, start=1):
+
         print(i, ".", task['title'] )
 
     task_num = input("which task do you wanna mark complete : ")
@@ -53,6 +75,7 @@ def complete_task():
 
         print("Title : ", task['title'])
         print("completed :", task["completed"])
+        save_task_to_file()
 
 def delete_task():
     for i, task in enumerate(tasks, start=1):
@@ -73,7 +96,9 @@ def delete_task():
         deleted_title = tasks[task_num -1]["title"]
         tasks.pop(task_num-1)
         print(f"✅ Task '{deleted_title}' deleted successfully!")
+        save_task_to_file()
 
+load_tasks_from_file()
 
 while True:
     show_menu()
