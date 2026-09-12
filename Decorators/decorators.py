@@ -22,9 +22,9 @@ keyword arguments
 
 
 def my_decorator(func):
-    def wrapper(*args):
+    def wrapper(*args, **kwargs):
         print("Before")
-        func(*args)
+        func(*args, **kwargs)
         print("After")
 
     return wrapper
@@ -38,28 +38,5 @@ def greet(name, age):
 def add(a,b):
     print(a+b)
 
-greet("Hamza", 29)
-add(10, 20)
-
-def show_number(*args):
-    print(args)
-
-show_number(10, 20, 30)
-
-# *kwargs example 
-def show_info(**kwargs):
-    # print(kwargs)     print the whole dictionary 
-    print(kwargs.get("name"))  # if we want to get only name or any single argument
-
-show_info(name="Hamza", Age=29, City="Nowshera")
-# **kwargs means collect keywords argument into a dictioanry. 
-# but when calling another function 
-def greet_name(name, age):
-    print(f"Hello {name}, you are {age}")
-
-data = {
-    "name" : "Hamza",
-    "age" : 29
-}
-
-greet_name(**data)
+greet("Hamza", age=29)
+# greet(name="Hamza", age=29)
