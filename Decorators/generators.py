@@ -48,3 +48,88 @@ def process_get_users(data):
 users = get_users()
 for data in users:
     process_get_users(data)
+
+# Generators can also receive the information from us, just like a normal function
+def get_numbers(limit):
+    for number in range(1, limit+1):
+        if number%3==0:
+            yield number
+
+numbers = get_numbers(15)
+for number in numbers:
+    print(number)
+
+# def get_square(limit):
+#     return [number*number for number in range(1,limit+1)]
+
+# numbers = get_square(5)
+# print(numbers)
+
+# def get_square(limit):
+#     for number in range(1,limit+1):
+#         yield number*number
+
+
+# numbers = get_square(5)
+# for number in numbers:
+#     print(number)
+
+def get_squares(limit):
+    return (number * number for number in range(1, limit + 1))
+
+numbers =get_squares(5)
+for number in numbers:
+    print(number)
+
+# Now using yield from
+def get_number():
+    numbers= [1,2,3]
+    yield from numbers
+
+numbers = get_number()
+for number in numbers:
+    print(number)
+
+"""
+yield numbers means give me this one value, yield from numbers give me each 
+value from numbers, one at a time
+yield = produce values.
+yield from = pass through/delegate values from another iterable or generator.
+"""
+
+def get_users():
+    yield "Hamza"
+    yield "Ali"
+
+
+def get_admins():
+    yield "Ahmad"
+    yield "Usman"
+
+
+def get_all_people():
+    yield from get_users()
+    yield from get_admins()
+
+
+people = get_all_people()
+
+for person in people:
+    print(person)
+
+# Generator pipeline(chaining generator)
+def get_numbers():
+    for number in range(1, 6):
+        yield number
+
+
+def get_squares(numbers):
+    for number in numbers:
+        yield number * number
+
+
+numbers = get_numbers()
+squares = get_squares(numbers)
+
+for number in squares:
+    print(number)
