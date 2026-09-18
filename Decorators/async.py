@@ -35,31 +35,57 @@ await response.json()
 We haven't discussed what an HTTP response is in async programming or why .json() itself needs await with aiohttp.
 """
 
+# import asyncio
+# import aiohttp
+
+
+# async def fetch_user(session, user_id):
+#     url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+
+#     async with session.get(url) as response:
+#         user = await response.json()
+#         return user
+
+
+# async def main():
+#     async with aiohttp.ClientSession() as session:
+
+#         tasks = []
+
+#         for user_id in range(1, 6):
+#             task = asyncio.create_task(fetch_user(session, user_id))
+#             tasks.append(task)
+
+#         results = await asyncio.gather(*tasks)
+
+#         for user in results:
+#             print(user["id"], user["name"])
+
+
+# asyncio.run(main())
+
 import asyncio
-import aiohttp
 
+async def task1():
+    print("Task1 is started")
+    await asyncio.sleep(2)
+    print("Task1 is finished")
 
-async def fetch_user(session, user_id):
-    url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
-
-    async with session.get(url) as response:
-        user = await response.json()
-        return user
-
+async def task2():
+    print("Task2 is started")
+    await asyncio.sleep(1)
+    print("Task2 is finished")
 
 async def main():
-    async with aiohttp.ClientSession() as session:
+    task_one = asyncio.create_task(task1())
+    
+    task_two = asyncio.create_task(task2())
 
-        tasks = []
-
-        for user_id in range(1, 6):
-            task = asyncio.create_task(fetch_user(session, user_id))
-            tasks.append(task)
-
-        results = await asyncio.gather(*tasks)
-
-        for user in results:
-            print(user["id"], user["name"])
-
+    print("Main is running")
+    
+    # await task_one
+    # await task_two
+    # instead of this use gather
+    await asyncio.gather(task_one, task_two)
 
 asyncio.run(main())
