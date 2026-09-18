@@ -47,7 +47,9 @@ def fetch_user(user_id):
     print(response.json()["name"])
 
 start_time = time.perf_counter()
+
 threads = []
+
 for user_id in range(1, 6):
     # thread = threading.Thread(target=fetch_user, args=(user_id))
     thread = threading.Thread(target=fetch_user, args=(user_id,))
