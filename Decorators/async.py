@@ -33,6 +33,8 @@ Its job is to wait for multiple async operations and collect their results.
 
 await response.json()
 We haven't discussed what an HTTP response is in async programming or why .json() itself needs await with aiohttp.
+
+A coroutine object is the object python creates when you call an async function. 
 """
 
 # import asyncio
@@ -64,28 +66,58 @@ We haven't discussed what an HTTP response is in async programming or why .json(
 
 # asyncio.run(main())
 
+# import asyncio
+
+# async def task1():
+#     print("Task1 is started")
+#     await asyncio.sleep(2)
+#     print("Task1 is finished")
+
+# async def task2():
+#     print("Task2 is started")
+#     await asyncio.sleep(1)
+#     print("Task2 is finished")
+
+# async def main():
+#     task_one = asyncio.create_task(task1())
+    
+#     task_two = asyncio.create_task(task2())
+
+#     print("Main is running")
+    
+#     # await task_one
+#     # await task_two
+#     # instead of this use gather
+#     await asyncio.gather(task_one, task_two)
+
+# asyncio.run(main())
+
 import asyncio
 
-async def task1():
-    print("Task1 is started")
-    await asyncio.sleep(2)
-    print("Task1 is finished")
-
-async def task2():
-    print("Task2 is started")
+async def add(a, b):
     await asyncio.sleep(1)
-    print("Task2 is finished")
+    return a+b
+
+async def mult(a, b):
+    await asyncio.sleep(1)
+    return a*b
 
 async def main():
-    task_one = asyncio.create_task(task1())
-    
-    task_two = asyncio.create_task(task2())
+    # result = await add(5, 3)
+    task_add = asyncio.create_task(add(5, 3))
 
-    print("Main is running")
-    
-    # await task_one
-    # await task_two
-    # instead of this use gather
-    await asyncio.gather(task_one, task_two)
+    # result = await task_add
+
+    task_mult = asyncio.create_task(mult(5, 3))
+
+    results = await asyncio.gather(task_add, task_mult)
+    print(results)
+
+
+    # result_mult = await task_mult
+
+    # print(result)
+
+    # print(result_mult)
 
 asyncio.run(main())
