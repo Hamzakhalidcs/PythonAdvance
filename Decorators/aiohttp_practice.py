@@ -1,4 +1,10 @@
 """
+aiohttp is a library for making HTTP request asynchronously.
+It is the async version of making request.
+
+An async request is an HTTP request that doesn't block your program while waiting for the response. 
+Your program can do other things while waiting for the server to reply.
+
 async and await use to write code that can do multiple 
 things at once without blocking, so our program doesnot freeze 
 for slow task like api calls or file reads. 
@@ -18,6 +24,7 @@ import aiohttp
 async def fetch_user(session, user_id):
     try:
         url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+        # url = "https://httpbin.org/delay/5"
 
         async with session.get(url) as response:
             response.raise_for_status()
@@ -27,8 +34,16 @@ async def fetch_user(session, user_id):
             return user_id, data["name"]
         
     except asyncio.TimeoutError:
-        print("Request Tiemout Error")
+        # print("Request Tiemout Error")
         return user_id, "Timeout"
+    
+    except aiohttp.ClientResponseError as e :
+        if e.status  ==404:
+            return user_id, "User not Found"
+        
+    except aiohttp.ClientError:
+        return user_id, "Connection Error"
+    
 
 
 async def main():
