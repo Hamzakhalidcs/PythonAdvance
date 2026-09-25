@@ -41,6 +41,8 @@ async def fetch_user(session, user_id):
         if e.status  ==404:
             return user_id, "User not Found"
         
+        return user_id, f"HTTP Error {e.status}"
+        
     except aiohttp.ClientError:
         return user_id, "Connection Error"
     
@@ -50,12 +52,14 @@ async def main():
     time_out = aiohttp.ClientTimeout(total=3)
 
     async with aiohttp.ClientSession(timeout = time_out) as session:
+        user_ids = [1, 2, 999]
 
-        tasks = [
-            asyncio.create_task(fetch_user(session, 1)),
-            asyncio.create_task(fetch_user(session, 2)),
-            asyncio.create_task(fetch_user(session, 999))
-        ]
+        """
+        This is creation of dynamic tasks. 
+        Dynamic task creation means creating tasks while the program is running, 
+        based on conditions, data, or user input — instead of writing them all out manually in advance.
+        """
+        tasks = [asyncio.create_task(fetch_user(session, user_id)) for user_id in user_ids ]
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
