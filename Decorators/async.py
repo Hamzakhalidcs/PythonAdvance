@@ -34,6 +34,8 @@ Its job is to wait for multiple async operations and collect their results.
 await response.json()
 We haven't discussed what an HTTP response is in async programming or why .json() itself needs await with aiohttp.
 
+aiohttp provides an asynchronous HTTP client, so we can use it with asyncio and await.
+
 A coroutine object is the object python creates when you call an async function. 
 """
 

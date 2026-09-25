@@ -1,0 +1,61 @@
+"""
+async and await use to write code that can do multiple 
+things at once without blocking, so our program doesnot freeze 
+for slow task like api calls or file reads. 
+
+async/await are the syntax(grammar) asyncio is the engine that makes that 
+syntax to actually run. 
+
+A session is a reusable connection object that keeps 
+settings, cookies, and headers across multiple requests, 
+so you don't have to set them up every time
+"""
+
+import asyncio
+import aiohttp
+
+
+async def fetch_user(session, user_id):
+    try:
+        url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+
+        async with session.get(url) as response:
+            response.raise_for_status()
+
+            data = await response.json()
+
+            return user_id, data["name"]
+        
+    except asyncio.TimeoutError:
+        print("Request Tiemout Error")
+        return user_id, "Timeout"
+
+
+async def main():
+    time_out = aiohttp.ClientTimeout(total=3)
+
+    async with aiohttp.ClientSession(timeout = time_out) as session:
+
+        tasks = [
+            asyncio.create_task(fetch_user(session, 1)),
+            asyncio.create_task(fetch_user(session, 2)),
+            asyncio.create_task(fetch_user(session, 999))
+        ]
+
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for result in results:
+            if isinstance(result, Exception):
+
+                """
+                The main reason we're doing this is because gather(..., return_exceptions=True)
+                gives us a mixture of successful results and exception objects in the same results list.
+                And isinstance() lets us distinguish between those two.
+                """
+                print("Request failed:", result)
+            else:
+                user_id, name = result
+                print(f"User {user_id}: {name}")
+
+
+asyncio.run(main())
