@@ -30,8 +30,8 @@ async def fetch_user(session, user_id):
             response.raise_for_status()
 
             data = await response.json()
-
-            return user_id, data["name"]
+            return user_id, data["name"], data["email"], data["company"]
+           # return user_id, data["name"]
         
     except asyncio.TimeoutError:
         # print("Request Tiemout Error")
